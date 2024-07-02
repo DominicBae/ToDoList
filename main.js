@@ -18,19 +18,19 @@ function addTask() {
     let taskContent = taskInput.value;
     taskList.push(taskContent);
     console.log(taskList);
+    render();
 }
 
 function render() {
-    let resultHTML = "";
+    let resultHTML = '';
     for (let i = 0; i < taskList.length; i++) {
         resultHTML += `<div class="task">
-                    <div>집가기</div>
+                    <div>${taskList[i]}</div>
                     <div>
                         <button>Check</button>
                         <button>Delete</button>
                     </div>
                 </div>`
     }
-
     document.getElementById("task-board").innerHTML = resultHTML;
 }
