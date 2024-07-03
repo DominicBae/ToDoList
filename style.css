@@ -50,23 +50,23 @@ body {
 
 .task div:last-child {
   display: flex;
-  gap: 5px; /* 아이콘 간격 줄임 */
-  padding-left: 10px; /* 아이콘 왼쪽 패딩 추가 */
+  gap: 5px; 
+  padding-left: 10px; 
 }
 
 .task div:first-child {
-  padding-left: 10px; /* 입력된 글씨에 대한 패딩 추가 */
+  padding-left: 10px; 
 }
 
 .task-done {
   text-decoration: line-through;
   background-color: lightgray;
   width: 80%;
-  height: 2.5em; /* 바의 세로 높이 설정 */
+  height: 2.5em; 
   display: flex;
-  align-items: center; /* 텍스트를 세로 가운데 정렬 */
-  padding-left: 10px; /* 입력된 글씨에 대한 패딩 추가 */
-  box-sizing: border-box; /* padding에 의한 크기 변화를 막기 위해 추가 */
+  align-items: center; 
+  padding-left: 10px; 
+  box-sizing: border-box; 
 }
 
 .task-tabs div {
