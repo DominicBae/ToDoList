@@ -1,39 +1,73 @@
 body {
   margin: 0;
-  background-image: url(./images/background.avif);
+  background-image: url(./images/1000_F_96833321_2O6AehDF2dxYwHb8J4CXipU5qu4ZLStE.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .container {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9); /* 배경색에 불투명도 적용 */
+  background-image: linear-gradient(
+      90deg,
+      transparent 79px,
+      rgba(171, 206, 212, 0.8) 79px,
+      /* 배경 이미지에 불투명도 적용 */ rgba(171, 206, 212, 0.8) 81px,
+      /* 배경 이미지에 불투명도 적용 */ transparent 81px
+    ),
+    linear-gradient(rgba(238, 238, 238, 0.8) 0.1em, transparent 0.1em); /* 배경 이미지에 불투명도 적용 */
+  background-size: 100% 1.2em;
   min-height: 100vh;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  padding-left: 100px;
+}
+
+h1 {
+  font-family: "Gaegu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#task-input {
+  border: none;
+  border-bottom: 2px solid #b197fc;
+  outline: none;
+  width: 25%;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-left: 8px;
+}
+
+.add {
+  cursor: pointer;
+  font-size: 28px;
+  color: #A56CC1;
 }
 
 .task-area {
-  border: 1px solid lightgray;
+  border: 2.5px solid #E8A87C;
 }
 
 .task-tabs {
   display: flex;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 2px solid #E8A87C ;
   position: relative;
 }
 
 .task-tabs div {
   padding: 1em;
+  font-family: 'Cute Font', cursive; /* 섹션 제목에 적용할 폰트 */
+  font-size: 2em; /* 폰트 크기 증가 */
 }
 
 #under-line {
   height: 4px;
   background-color: pink;
   position: absolute;
-  width: 80px;
+  width: 90px;
   left: 0px;
-  top: 52px;
+  top: 73px;
   padding: 0px;
 }
 
@@ -41,4 +75,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 1em;
+  font-family: "Gowun Dodum", sans-serif;
+  font-weight: bold;
+  font-style: normal;
 }
