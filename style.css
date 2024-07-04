@@ -31,16 +31,6 @@ body {
   border: 1px solid lightgray;
 }
 
-#under-line {
-  height: 4px;
-  background-color: pink;
-  position: absolute;
-  width: 80px;
-  left: 0px;
-  top: 52px;
-  padding: 0px;
-}
-
 .task {
   display: flex;
   justify-content: space-between;
@@ -81,4 +71,9 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.selected-tab {
+  font-weight: bold;
+  border-bottom: 4px solid pink;
 }
