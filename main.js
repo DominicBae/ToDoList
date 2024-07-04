@@ -4,7 +4,6 @@ let taskList = [];
 let tabs = document.querySelectorAll(".task-tabs div");
 let mode = 'all';
 let filterList = [];
-let underline = document.getElementById("under-line");
 
 // 입력창에 내용이 있을 때만 버튼 활성화
 taskInput.addEventListener("input", function() {
@@ -24,11 +23,11 @@ taskInput.addEventListener("keypress", function(event) {
     }
 });
 
-for (let i = 1; i < tabs.length; i++) {
-    tabs[i].addEventListener("click", function (event) {
+tabs.forEach(tab => {
+    tab.addEventListener("click", function(event) {
         filter(event);
     });
-}
+});
 
 taskInput.addEventListener("focus", function () {
     taskInput.value = "";
@@ -55,28 +54,26 @@ function render() {
 
     if (mode === "all") {
         list = taskList;
-    } else if (mode === "ongoing") {
-        list = filterList;
-    } else if (mode === "done") {
+    } else {
         list = filterList;
     }
 
     let resultHTML = '';
     for (let i = 0; i < list.length; i++) {
         if (list[i].isComplete) {
-            resultHTML += `<div class="task">
+            resultHTML += `<div class="task list-group-item">
             <div class="task-done">${list[i].taskContent}</div>
-            <div>
-                <button onclick="toggleComplete('${list[i].id}')"><i class="fa-solid fa-arrow-rotate-left fa-xl" style="color: #FFD43B;"></i></button>
-                <button onclick="deleteTask('${list[i].id}')"><i class="fa-solid fa-trash fa-xl" style="color: #FF0000;"></i></button>
+            <div class="task-buttons">
+                <button onclick="toggleComplete('${list[i].id}')"><i class="fa-solid fa-arrow-rotate-left" style="color: #28a745;"></i></button>
+                <button onclick="deleteTask('${list[i].id}')"><i class="fa-solid fa-trash" style="color: #dc3545;"></i></button>
             </div>
         </div>`;
         } else {
-            resultHTML += `<div class="task">
+            resultHTML += `<div class="task list-group-item">
             <div>${list[i].taskContent}</div>
-            <div>
-                <button onclick="toggleComplete('${list[i].id}')"><i class="fa-solid fa-check fa-xl" style="color: #FFD43B;"></i></button>
-                <button onclick="deleteTask('${list[i].id}')"><i class="fa-solid fa-trash fa-xl" style="color: #FF0000;"></i></button>
+            <div class="task-buttons">
+                <button onclick="toggleComplete('${list[i].id}')"><i class="fa-solid fa-check" style="color: #28a745;"></i></button>
+                <button onclick="deleteTask('${list[i].id}')"><i class="fa-solid fa-trash" style="color: #dc3545;"></i></button>
             </div>
         </div>`;
         }

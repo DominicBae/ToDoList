@@ -3,77 +3,77 @@ body {
   background-image: url(./images/background.avif);
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: 'Noto Sans', Arial, sans-serif;
 }
 
 .container {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
   min-height: 100vh;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .task-tabs {
-  display: flex;
-  border-bottom: 1px solid lightgray;
-  position: relative;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
 }
 
 .task-tabs div {
-  padding: 1em;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.task-tabs .selected-tab {
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+}
+
+.task-tabs div:hover {
+  background-color: #007bff;
+  color: white;
 }
 
 #task-input {
-  padding-left: 5px;
+  width: 70%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-.task-area {
-  border: 1px solid lightgray;
+#add-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .task {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.task div:last-child {
-  display: flex;
-  gap: 5px; 
-  padding-left: 10px; 
-}
-
-.task div:first-child {
-  padding-left: 10px; 
-}
-
-.task-done {
+.task .task-done {
   text-decoration: line-through;
-  background-color: lightgray;
-  width: 80%;
-  height: 2.5em; 
+  color: gray;
+}
+
+.task-buttons {
   display: flex;
-  align-items: center; 
-  padding-left: 10px; 
-  box-sizing: border-box; 
+  gap: 10px;
 }
 
-.task-tabs div {
-  cursor: pointer;
-}
-
-#add-button {
-  cursor: pointer;
-}
-
-button {
+.task-buttons button {
   background: none;
   border: none;
   cursor: pointer;
-}
-
-.selected-tab {
-  font-weight: bold;
-  border-bottom: 4px solid pink;
+  font-size: 1.2em;
 }
